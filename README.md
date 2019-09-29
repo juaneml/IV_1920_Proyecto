@@ -9,9 +9,11 @@ Repositorio para el proyecto de Infraestructura Virtual.
 
 
 ## El lenguaje para desarrollar el microservicio
+
 - El lenguage que se va a usar para desarrollar el microservicio es [python]((https://www.python.org/)) .
 
 ## Framework
+
 - El framework que se va a usar es [hug](http://www.hug.rest/) .
 ## Base de datos
 La base de datos que se va a usar el microservicio es [postgresql](https://www.postgresql.org/) .
