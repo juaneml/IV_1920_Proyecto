@@ -3,12 +3,18 @@
 
 Repositorio para el proyecto de Infraestructura Virtual.
 ## Descripción
-- El proyecto que se va a realizar es sobre un microservicio para dejar de fumar
+- El proyecto que se va a realizar es sobre un microservicio para dejar de fumar.
 - Nos notificará los días que llevamos sin fumar.
-- Los Cigarrillos evitados.
 - Dinero ahorrado.
-- Tiempo ganado en saludo por cigarrillo no fumado.
-  
+
+
+## El lenguaje para desarrollar el microservicio
+- El lenguage que se va a usar para desarrollar el microservicio es [python]((https://www.python.org/)) .
+
+## Framework
+- El framework que se va a usar es [hug](http://www.hug.rest/) .
+## Base de datos
+La base de datos que se va a usar el microservicio es [postgresql](https://www.postgresql.org/) .
 ## Documentación
 
 [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc)
