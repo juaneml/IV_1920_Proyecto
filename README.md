@@ -5,8 +5,9 @@
 Repositorio para el proyecto de Infraestructura Virtual.
 ## Descripción
 - El proyecto que se va a realizar es sobre un microservicio para dejar de fumar.
-- Nos notificará los días que llevamos sin fumar.
-- Dinero ahorrado.
+  
+- El microservicio proporcionará los días que un usuario lleva sin fumar a partir del día que se indique que ha empezado a dejar de fumar.
+- El usuario podrá ver el dinero que va ahorrando introduciendo el tipo de tabaco, tabaco de liar o industrial,la marca y los cigarrillos que fumaba diarimente, el microservicio a partir de eso datos proporcinará la cantidad de dinero en euros que va ahorrado.
 
 ## Motivación
 
