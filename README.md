@@ -4,7 +4,9 @@
 
 
 Repositorio para el proyecto de Infraestructura Virtual.
+
 ## Descripción
+
 - El proyecto que se va a realizar es sobre un microservicio para dejar de fumar.
   
 - El microservicio proporcionará los días que un usuario lleva sin fumar a partir del día que se indique que ha empezado a dejar de fumar.
@@ -17,21 +19,25 @@ Repositorio para el proyecto de Infraestructura Virtual.
 
 ## El lenguaje para desarrollar el microservicio
 
-- El lenguage que se va a usar para desarrollar el microservicio es [python]((https://www.python.org/)) .
+- El lenguage que se va a usar para desarrollar el microservicio es [Python](https://www.python.org/).
 
 
 
 ## Framework
 
-- El framework que se va a usar es [hug](http://www.hug.rest/) .
-## Base de datos
-La base de datos que se va a usar el microservicio es [postgresql](https://www.postgresql.org/) .
+- El framework que se va a usar es [Hug](http://www.hug.rest/).
+  
+## Gestor de base de datos
+La base de datos que se va a usar el microservicio es [Postgresql](https://www.postgresql.org/).
 
+## Logs
+- Para el login de los usuarios y los logs haré uso de la biblioteca de python [loggin](https://docs.python.org/3/library/logging.html) que permitirá el correcto registro de mensajes para el microservicio.
+- 
 ## Test
 - Para comprobar el correcto funcionamiento se hará uso de test, para ello se usará [Pytest](https://docs.pytest.org/en/latest/)
-- Además haremos uso del servicio de integración continua [Travis-CI](https://travis-ci.org/) que se configurará para este repositorio.
+- Además haremos uso del servicio de integración continua [Travis](https://travis-ci.org/) que se configurará para este repositorio.
   
 ## Documentación
-- Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc)
+- Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
 
