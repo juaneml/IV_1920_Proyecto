@@ -32,7 +32,7 @@ La base de datos que se va a usar el microservicio es [Postgresql](https://www.p
 
 ## Logs
 - Para el login de los usuarios y los logs haré uso de la biblioteca de python [loggin](https://docs.python.org/3/library/logging.html) que permitirá el correcto registro de mensajes para el microservicio.
-- 
+  
 ## Test
 - Para comprobar el correcto funcionamiento se hará uso de test, para ello se usará [Pytest](https://docs.pytest.org/en/latest/)
 - Además haremos uso del servicio de integración continua [Travis](https://travis-ci.org/) que se configurará para este repositorio.
