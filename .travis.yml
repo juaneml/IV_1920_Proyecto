@@ -1,16 +1,12 @@
 language: python
 
 python:
-  - "3.7.3"
-
-services:
-  - postgresql 
-
-before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - "3.6.6"
 
 # command to install dependencies
 install:
   - pip3 install -r requirements.txt
-  
-script: script: cd ./test && pytest test.py
+
+# command to run tests
+script: cd ./test && pytest test_.py test_app.py
+
