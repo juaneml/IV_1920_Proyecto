@@ -20,7 +20,7 @@ class TestMethods(unittest.TestCase):
     
     def test_progreso(self):
         self.assertEqual(self.pruebaUsuario.get_progreso(self),0,"No tiene progreso")
-        self.assertEqual(self.pruebaUsuario.get_progreso(self),5,"No tiene progreso dato mal")
+        #self.assertEqual(self.pruebaUsuario.get_progreso(self),5,"No tiene progreso dato mal")
 
     def test_day(self):
         self.assertEqual(self.pruebaServicio.get_day(),0,"ehi")
