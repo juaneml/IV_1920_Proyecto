@@ -14,4 +14,4 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
  
 # command to run tests
-script: cd ./test && pytest test.py 
+script: cd ./test && pytest -v test.py 
