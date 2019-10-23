@@ -83,7 +83,7 @@ Para obtener la contraseña inicical que nos viene por defecto en Jenkins.
 - En Branck Sources añadimos nuetro respositorio con las credenciales.
 - Build Configuration Jenkinsfile.
 - Si deseamos que se ejecute cada cierto tiempo tenemos la opcion, Scan Multibranck Pipeline Triggers con el intervalo de tiempo. Finalizada la configuración guardamos.
-- Vamos a nuestro repositorio de Github y creamos un archivo con el nombre [JenkinsFile](jenkis) con los test que queremos que realice.
+- Vamos a nuestro repositorio de Github y creamos un archivo con el nombre [JenkinsFile](https://github.com/juaneml/IV_1920_Proyecto/blob/master/Jenkinsfile) con los test que queremos que realice.
   
 - Construimos la tarea y una vez finalizada obtendremos una salida como esta:
 ![](images/Historia_vista_estados.png)
