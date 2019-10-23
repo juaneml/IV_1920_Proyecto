@@ -38,12 +38,6 @@ class TestMethods(unittest.TestCase):
        self.assertEqual(self.pruebaUsuario.get_nombre(self),False,"El campo nombre está vacío")
        self.assertEqual(self.pruebaUsuario.get_nombre(0),"Usuario 1", "Tiene nombre")
     
-    """ test dias que lleva sin fumar """
-
-    def test_diaSin(self):
-        self.assertEqual(self.pruebaUsuario.get_diaSin(self),0,"No tiene progreso")
-        self.assertEqual(self.pruebaUsuario.get_diaSin(0),8749,"Es progreso obtenido es correcto")
-
     """ test marca tabaco """
 
     def test_marca(self):
