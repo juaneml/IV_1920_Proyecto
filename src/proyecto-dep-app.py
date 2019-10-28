@@ -30,7 +30,7 @@ with open('../json/datos_tabaco.json','r') as marcas:
 
     for i in range(serv.get_numUsuarios()):
        lista_tabaco.append(serv.to_Simple(i,usuario))
-    print (serv.to_Simple(i,usuario))
+    
 
 @hug.cli()
 # @hug.get('/')
