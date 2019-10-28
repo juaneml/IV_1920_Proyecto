@@ -289,7 +289,7 @@ if __name__ == "__main__":
        lista_tabaco = json.load(marcas)
 
     serv = Servicio() 
-    serv.crea_sistema(usuario,serv.get_progreso(),lista_tabaco)
+    serv.crea_sistema(usuario,usuario.get_numUsuarios(),lista_tabaco)
 
     # for i in range(serv.get_numUsuarios()):
     #     print (serv.to_s(i,usuario))

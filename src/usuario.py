@@ -137,7 +137,7 @@ class Usuario:
 
     """ Devuelve el número de usuarios """
     def get_numUsuarios(self):
-        return len(self.lista_usuarios)
+        return self.num_usuarios
 
     """ Devuelve el tipo de tabaco """
 
