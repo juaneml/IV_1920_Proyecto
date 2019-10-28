@@ -56,6 +56,7 @@ class TestMethods(unittest.TestCase):
         response = requests.get(url)
         self.assertEqual(response.json()['status'],'OK', "Aplicación con status OK")
         
+        
 if __name__ == '__main__':
     unittest.main()
     
