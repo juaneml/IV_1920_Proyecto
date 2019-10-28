@@ -7,11 +7,12 @@ import sys
 import pytest
 import unittest
 import json
+import requests
 
 sys.path.append('../src/')
 from principal import *
 from usuario import *
-url = 'https://proyecto-iv-19.herokuapp.com/'
+url = 'https://proyecto-iv-19.herokuapp.com/status'
 
 class TestMethods(unittest.TestCase):
 
@@ -56,7 +57,7 @@ class TestMethods(unittest.TestCase):
         response = requests.get(url)
         self.assertEqual(response.json()['status'],'OK', "Aplicación con status OK")
         
-        
+
 if __name__ == '__main__':
     unittest.main()
     
