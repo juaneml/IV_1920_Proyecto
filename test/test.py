@@ -11,6 +11,7 @@ import json
 sys.path.append('../src/')
 from principal import *
 from usuario import *
+url = 'https://proyecto-iv-19.herokuapp.com/'
 
 class TestMethods(unittest.TestCase):
 
@@ -50,6 +51,10 @@ class TestMethods(unittest.TestCase):
         
         self.assertEqual(self.pruebaServicio.set_moneda(0),False, "Dato incorrecto")
         self.assertEqual(self.pruebaServicio.set_moneda("Libra"),True, "Dato correcto")
+
+    def test_url_raiz(self):
+        response = requests.get(url)
+        self.assertEqual(response.json()['status'],'OK', "Aplicación con status OK")
         
 if __name__ == '__main__':
     unittest.main()
