@@ -92,6 +92,61 @@ Para obtener la contraseña inicical que nos viene por defecto en Jenkins.
 - También tenemos la opción de ver los logs con los resultados de nuestros test a la tarea.
 ![](images/logs.png)
 
+
+# Despliegue de aplicación en heroku
+
+A continuación veremos los pasos para desplegar nuestra aplicación.
+
+## Paso 1:
+- Nos registramos en [Heroku](https://www.heroku.com/)
+- Elegimos el nombre de nuestra aplicación, en mi caso proyecto-iv
+![create](images/create_new_app.png)
+
+## Paso 2:
+- Conectamos nuestra aplicación con nuestro repositorio eh Github
+![connect](images/conect_github.png)
+
+## Paso 3:
+- Activamos la opción Wait for CI to pass before deploy, ya que tenemos a Travis para
+la ejecución de los tests.
+![automatic_desploy](images/automatic_deploys.png)
+
+# Adaptamos el proyecto para la ejecución de heroku
+
+- Añadimos los requerimientos en el archivo requirements.txt necesarios en mi caso son los siguientes :
+   ~~~
+    Hug==2.4.1
+    pytest==3.9.3
+    PyYAML==5.1.2
+    gunicorn
+   ~~~
+# Añadimos un nuevo archivo con nombre Procfile con el contenido siguiente:
+  ~~~
+   web: cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
+  ~~~
+
+ - Este archivo es necesario para indicarle a Heroku como ejecutar nuestra aplicación, indica que se mueva al directorio donde está la aplicación, directorio src,se indica que el proceso es un proceso web que va a recibir tráfico HTTP y que se ejecute la el fichero Python con nombre proyecto-dep_app,con el servidor web gunicorn ejecute la aplicación de Python que usa como framework hug  con los parámetros __hug_wsgi__ como nos indica la documentación [hug](https://www.hug.rest/website/quickstart) y así integre nuestra aplicación de microservicio.
+
+ - Así ya tendremos a nuestra aplicación en la nube:
+
+ Para acceder a la aplicación podemos hacerlo mediante el enlace: [https://proyecto-iv-19.herokuapp.com/](https://proyecto-iv-19.herokuapp.com/)
+
+
+ # Comprobamos que todo ha ido bien:
+  - En la ruta / de nuestra aplicación abrimos el terminal y hacemos uso del comando curl y accedemos a la url que nos proporciona Heroku de    nuestra aplicación.
+   ~~~
+   $curl https://proyecto-iv-19.herokuapp.com/
+   {"status": "OK"}
+   ~~~
+   - Se ha añadido /lista_usuarios y con el comando curl obtenemos los siguientes resultados.
+  ~~~
+  "[{'name': 'Usuario 1', 'password': 'asdfj2323as', 'progres': '1995-11-06T23:20:50', 'marca': 'MarcaA', 'tipo': 'Industrial', 'n_cigar': 22}, {'name': 'Usuario 2', 'password': '#@45asfull', 'progres': '2019-04-05T10:15:26', 'marca': 'MarcaE', 'tipo': 'Liar', 'n_cigar': 10}, {'Nombre': 'Usuario 1', 'Password': 'asdfj2323as', 'Num. cigarillos': 22, 'Marca': 'MarcaA', 'Progreso': [8756, 'días', '114.30', 'minutos y', 6858, 'seg.']}, {'Nombre': 'Usuario 2', 'Password': '#@45asfull', 'Num. cigarillos': 10, 'Marca': 'MarcaE', 'Progreso': [205, 'días', '899.70', 'minutos y', 53982, 'seg.']}]"
+  ~~~
+  - Se ha añadido /datos_calculados y con el comando curl obtenemos los siguientes resultados.
+   ~~~
+     [{"name": "MarcaA", "tipo": "Industrial", "capacidad": 20, "precio": 4.5, "moneda": "€"}, {"name": "MarcaB", "tipo": "Industrial", "capacidad": 20, "precio": 4.8, "moneda": "€"}, {"name": "Marcac", "tipo": "Industrial", "capacidad": 20, "precio": 5.0, "moneda": "€"}, {"name": "MarcaD", "tipo": "Liar", "capacidad": 30, "precio": 3.5, "moneda": "€"}, {"name": "MarcaE", "tipo": "Liar", "capacidad": 30, "precio": 3.75, "moneda": "€"}, {"Nombre": "Usuario 1", "Progreso": [8756, "días", "114.30", "minutos y", 6858, "seg."], "Dinero Ahorrado": "43342.200000000004€"}, {"Nombre": "Usuario 2", "Progreso": [205, "días", "899.70", "minutos y", 53982, "seg."], "Dinero Ahorrado": "256.25€"}]
+  ~~~
+
 - Puedes consultar la documentación en:
   
 [Doc](https://juaneml.github.io/doc_IV-1920_Proyecto/).
