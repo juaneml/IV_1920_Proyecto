@@ -37,7 +37,9 @@ La base de datos que se va a usar el microservicio es [Postgresql](https://www.p
 ## Test
 - Para comprobar el correcto funcionamiento se hará uso de test, para ello se usará [Pytest](https://docs.pytest.org/en/latest/)
 - Además haremos uso del servicio de integración continua [Travis](https://travis-ci.org/) que se configurará para este repositorio.
-  
+
+buildtool: Makefile
+
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
