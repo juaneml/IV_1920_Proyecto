@@ -28,11 +28,67 @@
   - Este servicio permite ejecutar tests de nuestro repositorio en Github.
   - Los pasos son muy sencillos y son:
     - Nos registramos con nuestra cuenta de Github.
-    - Creamos en el repositorio donde queremos tener la integración continua un archivo con el nombre [.travis.yml](https://github.com/juaneml/IV_1920_Proyecto/blob/master/.travis.yml), en este archivo ponemos el lenguaje de programación que usamos los requisitos que necesitamos o bien creamos un archivo [requirements.txt](https://github.com/juaneml/IV_1920_Proyecto/blob/master/requirements.txt) donde especificamos los servicios y dependecias que necesitamos y por último incluimos la instrucción de pytest para la ejecución de test de nuestro proyecto.
+    - Creamos en el repositorio donde queremos tener la integración continua un archivo con el nombre [.travis.yml](https://github.com/juaneml/IV_1920_Proyecto/blob/master/.travis.yml),
+
+    Fichero .travis.yml
+    ~~~
+    language: python
+
+        python:
+        - "3.7"
+
+        # command to install dependencies
+        install:
+        - pip3 install -r requirements.txt
+        - pip3 install codecov
+        - pip3 install pytest-cov
+        - pip3 install python-coveralls
+        - pip3 install coveralls
+        services:
+        - postgresql
+            
+        before_script:
+        - psql -c 'create database travis_ci_test;' -U postgres
+        
+        
+        # command to run tests
+        script: 
+        - cd ./test && pytest -v test.py 
+        - coverage run test.py
+        - coverage report -m
+        - coverage xml
+
+        after_success:
+        - bash <(curl -s https://codecov.io/bash) -t d0ba6a02-f9f7-44ab-b128-a82396d54280 -f coverage.xml
+
+    ~~~     
+     
+  - Vamos a describir este archivo:
+    - language: lenguage de programación usado, en mi caso [python](https://www.python.org/), versión 3.7. 
+    - Los comandos para instalar las depencecias:
+      - con pip3 install instalamos:
+        - [requirements.txt](https://github.com/juaneml/IV_1920_Proyecto/blob/master/requirements.txt),requisitos que necesitamos.
+        - [codecov](https://codecov.io/), una herramienta de integración para comparar la cobertura de nuestro código.
+        - [coverage](https://coverage.readthedocs.io/en/v4.5.x/), para medir la cobertura de los programas programados en python, nos permitirá ver el seguimiento del uso de las distintas funciones, es decir el uso en la aplicación de los distintos test.
+        - [coveralls](https://coveralls.io/), otra herramienta para la cobertura de nuestro código, que posteriormente se hará uso.
+        - y por último incluimos la instrucción de pytest para la ejecución de test de nuestro proyecto.
+        - Se activa el servicio de postgreSql que posteriormente se hará uso.
+        - Con ***psql -c***  , se crea una base de datos.
+        - pytest para el uso de test.
+        - coverage run nombre del test, para aplicar la cobertura a nuestro test.
+        - coverage report -m, que nos mostrará la cobertura de nuestro código
+        - coverage xml, para crear nuestro reporte.
+        - bash <(curl -s https://codecov.io/bash) -t codec_token -f nombre_archivo.xml para subir nuestro reporte y poder seguirlo en la la web de [codecov](https://codecov.io/).
+        
+    - Una vez configurado nuestro archivo .travis.yml vamos a la web de travis.   
     - En el panel de Travis activamos nuestro proyecto
+     
     ![imagen](images/active_repo.png)
     - En la pestaña Dashboard podremos ver nuestro repositorio activo.
     - Para poder verlo con más detalle lo seleccionamos y veremos si ha ido todo bien o hemos tenido algún error.
+    - Si todo ha ido bien tendremos una salida como esta:
+  
+   ![img](images/travis_log.png)
 
 ## [Jenkins](https://jenkins.io/)<img src="images/jenkins.png" alt="alt text" width="40px" height="40px">
 
@@ -93,43 +149,7 @@ Para obtener la contraseña inicical que nos viene por defecto en Jenkins.
 ![](images/logs.png)
 
 
-# Despliegue de aplicación en heroku
 
-A continuación veremos los pasos para desplegar nuestra aplicación.
-
-## Paso 1:
-- Nos registramos en [Heroku](https://www.heroku.com/)
-- Elegimos el nombre de nuestra aplicación, en mi caso proyecto-iv
-![create](images/create_new_app.png)
-
-## Paso 2:
-- Conectamos nuestra aplicación con nuestro repositorio eh Github
-![connect](images/conect_github.png)
-
-## Paso 3:
-- Activamos la opción Wait for CI to pass before deploy, ya que tenemos a Travis para
-la ejecución de los tests.
-![automatic_desploy](images/automatic_deploys.png)
-
-# Adaptamos el proyecto para la ejecución de heroku
-
-- Añadimos los requerimientos en el archivo requirements.txt necesarios en mi caso son los siguientes :
-   ~~~
-    Hug==2.4.1
-    pytest==3.9.3
-    PyYAML==5.1.2
-    gunicorn
-   ~~~
-# Añadimos un nuevo archivo con nombre Procfile con el contenido siguiente:
-  ~~~
-   web: cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
-  ~~~
-
- - Este archivo es necesario para indicarle a Heroku como ejecutar nuestra aplicación, indica que se mueva al directorio donde está la aplicación, directorio src,se indica que el proceso es un proceso web que va a recibir tráfico HTTP y que se ejecute la el fichero Python con nombre proyecto-dep_app,con el servidor web gunicorn ejecute la aplicación de Python que usa como framework hug  con los parámetros __hug_wsgi__ como nos indica la documentación [hug](https://www.hug.rest/website/quickstart) y así integre nuestra aplicación de microservicio.
-
- - Así ya tendremos a nuestra aplicación en la nube:
-
- Para acceder a la aplicación podemos hacerlo mediante el enlace: [https://proyecto-iv-19.herokuapp.com/](https://proyecto-iv-19.herokuapp.com/)
 
 
  # Comprobamos que todo ha ido bien:
