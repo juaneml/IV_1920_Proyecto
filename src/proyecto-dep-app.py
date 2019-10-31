@@ -38,6 +38,13 @@ with open('../json/datos_tabaco.json','r') as marcas:
 #     salida = {"status": "OK"}
 #     return salida
 
+
+@hug.get('/')
+def status():
+    status = {"status": "OK"
+    }
+    return status
+
 @hug.get('/status')
 def status():
     status = {"status": "OK"

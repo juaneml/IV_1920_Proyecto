@@ -51,34 +51,35 @@ class Usuario:
         if(type(string) != int):
             self.nombre.append(string)
             return True
-        else:
-            return False
+        #else:
+        #    return False
     
     """ Devuelve el progreso """
     def get_progreso(self,string):
 
-        try:
+        if(type(string) != str):
             return (self.progreso[string])
-        except:
-            return False
+        #else:
+        #    return False
 
 
     """ Devuelve días sin fumar """
     def get_diaSin(self,string):
 
-        try:
+        if(type(string) != str):
             return (self.get_progreso(string)[0])
-        except:
-            return False
+        #else:
+        #    return False
 
     """ Add el progreso """
     def add_progreso(self,string):
 
         if(type(string) != datetime):
-            self.progreso.append(string)
+            self.progreso.append([string.days, "días",str("{0:.2f}").format(string.seconds/60), "minutos y",string.seconds, "seg."])
+
             return True
-        else:
-            return False
+        #else:
+        #    return False
 
     """ Devuelve el número de cigarros que fumaba por día  """
 
@@ -91,8 +92,8 @@ class Usuario:
         if(type(int) != str):
             self.num_cigar.append(int)
             return True
-        else:
-            return False
+        #else:
+        #    return False
 
 
     """ Devuelve la contraseña"""
@@ -103,13 +104,13 @@ class Usuario:
 
     """ Cambia la contraseña """
 
-    def set_password(self,string):
+    #def set_password(self,string):
 
-        if(type(string) != self):
-            self.password = string
-            return True
-        else:
-            return False
+    #    if(type(string) != self):
+    #        self.password = string
+    #        return True
+    #    else:
+    #        return False
 
     """ Add password """
     def add_password(self,string):
@@ -118,8 +119,8 @@ class Usuario:
             self.password.append(string)
             return True
         
-        else:
-            return False
+        #else:
+        #   return False
 
 
     """ Devuelve la marca """
@@ -132,8 +133,8 @@ class Usuario:
         if(type(string) != int):
             self.marca.append(string)
             return True
-        else:
-            return False
+       # else:
+       #     return False
 
     """ Devuelve el número de usuarios """
     def get_numUsuarios(self):
@@ -152,25 +153,25 @@ class Usuario:
             self.tipo.append(string)
             return True
 
-        else:
-            return False
+        #else:
+        #    return False
 
     """ Cambia el nombre """
-    def set_nombre(self,usu,string):
-        self.nombre[usu] = string
+    #def set_nombre(self,usu,string):
+    #    self.nombre[usu] = string
     
     """ Cambia el número de cigarros """
-    def set_numCigar(self,usu,int):
-        self.num_cigar[usu] = int
+    #def set_numCigar(self,usu,int):
+    #    self.num_cigar[usu] = int
 
     """ Cambia el progreso """
-    def set_progreso(self,usu,string):
-        self.progreso[usu] = string
+    #def set_progreso(self,usu,string):
+    #    self.progreso[usu] = string
 
 
     """ Cambia la marca """
-    def set_marca(self,usu,string):
-        self.marca[usu] = string
+    #def set_marca(self,usu,string):
+    #    self.marca[usu] = string
 
 
     """ Cambia el numero de usuarios """
@@ -179,8 +180,8 @@ class Usuario:
 
 
     """ Cambia el tipo de tabaco """
-    def set_tipo(self,string):
-        self.tipo = string
+    #def set_tipo(self,string):
+    #    self.tipo = string
 
         
     """ Crea usuarios """
@@ -193,45 +194,37 @@ class Usuario:
         for i in dic:
             if(i['name'] != None):
                 self.lista_usuarios.append(self.add_nombre(i['name']))
-            else:
-                self.lista_usuarios.append(self.set_nombre(" "))
 
             if(i['password'] != None):
                 self.lista_usuarios.append(self.add_password(i['password']))
-            else:
-                self.lista_usuarios.append(self.set_password(" "))
+            
 
             if(i['n_cigar'] != None):
                 self.lista_usuarios.append(self.add_numCigar(i['n_cigar']))
-            else:
-               self.lista_usuarios.append(self.add_numCigar(" "))
+            
 
             if(i['marca'] != None):
                 self.lista_usuarios.append(self.add_marca(i['marca']))
             
-            else:
-                self.lista_usuarios.append(self.add_marca(" "))
             
             if (i['tipo'] != None):
                 self.lista_usuarios.append(self.add_tipo(i['tipo']))
             
-            else:
-                self.lista_usuarios.append(self.add_tipo(" "))
-
             if(i['progres'] != None):
                 
                 fecha1 = datetime.now()
                 diferencia = fecha1 - datetime.strptime(i['progres'],'%Y-%m-%dT%H:%M:%S')
 
-                self.progreso.append([diferencia.days, "días",str("{0:.2f}").format(diferencia.seconds/60), "minutos y",diferencia.seconds, "seg."])
-
-            else:
-                self.lista_usuarios.append(self.set_progreso(" "))
-
-            
-            
+                #self.progreso.append([diferencia.days, "días",str("{0:.2f}").format(diferencia.seconds/60), "minutos y",diferencia.seconds, "seg."])
+                self.add_progreso(diferencia)
             self.num_usuarios+=1
             self.set_numUsu(self.num_usuarios)
+            self.get_cigar(0)
+            self.get_diaSin(0)
+            self.get_marca(0)
+            self.get_numUsuarios()
+            self.get_tipo(0)
+            self.to_s(0)
             
 
     def to_s(self,i):
