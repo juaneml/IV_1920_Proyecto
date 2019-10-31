@@ -30,9 +30,9 @@ Para ello realiza en un terminal lo siguiente:
 ~~~
 git clone https://github.com/juaneml/IV_1920_Proyecto.git
 ~~~
-
+~~~
 buildtool: Makefile
-
+~~~
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
