@@ -32,7 +32,7 @@ class TestMethods(unittest.TestCase):
 
    
     pruebaServicio = Servicio()
-    pruebaServicio.crea_sistema(pruebaUsuario,pruebaServicio.get_numUsuarios(),lista_tabaco)
+    pruebaServicio.crea_sistema(pruebaUsuario,pruebaUsuario.get_numUsuarios(),lista_tabaco)
 
     """ test nombre usuario """
 
@@ -53,6 +53,9 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(self.pruebaServicio.set_moneda(0),False, "Dato incorrecto")
         self.assertEqual(self.pruebaServicio.set_moneda("Libra"),True, "Dato correcto")
 
+    def test_to_s(self):
+        self.assertEqual(self.pruebaServicio.to_s(0,self.pruebaUsuario)['Nombre'],'Usuario 1', "Usuario correcto")
+    
     def test_url_raiz(self):
         response = requests.get(url)
         self.assertEqual(response.json()['status'],'OK', "Aplicación con status OK")
