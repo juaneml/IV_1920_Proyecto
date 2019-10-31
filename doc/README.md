@@ -150,22 +150,39 @@ Para obtener la contraseña inicical que nos viene por defecto en Jenkins.
 
 
 
+# Herramienta de construcción
+- Hemos definido una herramienta de construcción
+[Makefile](https://github.com/juaneml/IV_1920_Proyecto/blob/master/Makefile)
+
+con las siguientes características:
+
+- dependences:
+  - instalará las dependencias necesarias como las que tenemos en requirements.txt
+  - script:
+    - Lanzará los test y cobertura del código así como un reporte en xml.
+  - ini_ap: inicia con la herramienta gunicorn la aplicación, una herramienta que nos permite desplegar de forma local nuestra aplicación, aquí tenemos un ejemplo con la ini_ap y el comando curl:
+  ~~~
+    make ini_ap
+    curl 0.0.0.0:80/
+  ~~~
+ 
+  ![img](images/curl_status.png)
+  - stop_ap: para la aplicación.
+   ~~~
+    make stop_ap
+    
+   ~~~
+
+![img](images/stop_app.png)  
+
+- logs_repo, nos mostrará los logs del repositorio 
+   ~~~
+    make logs_repo 
+   ~~~
 
 
  # Comprobamos que todo ha ido bien:
-  - En la ruta / de nuestra aplicación abrimos el terminal y hacemos uso del comando curl y accedemos a la url que nos proporciona Heroku de    nuestra aplicación.
-   ~~~
-   $curl https://proyecto-iv-19.herokuapp.com/
-   {"status": "OK"}
-   ~~~
-   - Se ha añadido /lista_usuarios y con el comando curl obtenemos los siguientes resultados.
-  ~~~
-  "[{'name': 'Usuario 1', 'password': 'asdfj2323as', 'progres': '1995-11-06T23:20:50', 'marca': 'MarcaA', 'tipo': 'Industrial', 'n_cigar': 22}, {'name': 'Usuario 2', 'password': '#@45asfull', 'progres': '2019-04-05T10:15:26', 'marca': 'MarcaE', 'tipo': 'Liar', 'n_cigar': 10}, {'Nombre': 'Usuario 1', 'Password': 'asdfj2323as', 'Num. cigarillos': 22, 'Marca': 'MarcaA', 'Progreso': [8756, 'días', '114.30', 'minutos y', 6858, 'seg.']}, {'Nombre': 'Usuario 2', 'Password': '#@45asfull', 'Num. cigarillos': 10, 'Marca': 'MarcaE', 'Progreso': [205, 'días', '899.70', 'minutos y', 53982, 'seg.']}]"
-  ~~~
-  - Se ha añadido /datos_calculados y con el comando curl obtenemos los siguientes resultados.
-   ~~~
-     [{"name": "MarcaA", "tipo": "Industrial", "capacidad": 20, "precio": 4.5, "moneda": "€"}, {"name": "MarcaB", "tipo": "Industrial", "capacidad": 20, "precio": 4.8, "moneda": "€"}, {"name": "Marcac", "tipo": "Industrial", "capacidad": 20, "precio": 5.0, "moneda": "€"}, {"name": "MarcaD", "tipo": "Liar", "capacidad": 30, "precio": 3.5, "moneda": "€"}, {"name": "MarcaE", "tipo": "Liar", "capacidad": 30, "precio": 3.75, "moneda": "€"}, {"Nombre": "Usuario 1", "Progreso": [8756, "días", "114.30", "minutos y", 6858, "seg."], "Dinero Ahorrado": "43342.200000000004€"}, {"Nombre": "Usuario 2", "Progreso": [205, "días", "899.70", "minutos y", 53982, "seg."], "Dinero Ahorrado": "256.25€"}]
-  ~~~
+  Puedes visitar el resultado [aquí](https://github.com/juaneml/IV_1920_Proyecto/blob/master/src/README.md)
 
 - Puedes consultar la documentación en:
   
