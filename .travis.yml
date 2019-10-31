@@ -1,17 +1,30 @@
 language: python
 
 python:
-  - "3.6.6"
+  - "3.7"
 
 # command to install dependencies
 install:
   - pip3 install -r requirements.txt
-
+  - pip3 install codecov
+  - pip3 install pytest-cov
+  - pip3 install python-coveralls
+  - pip3 install coveralls
 services:
   - postgresql
     
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
+  
  
 # command to run tests
-script: cd ./test && pytest -v test.py 
+script: 
+  - cd ./test && pytest -v test.py 
+  - coverage run test.py
+  - coverage report -m
+  - coverage xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t d0ba6a02-f9f7-44ab-b128-a82396d54280 -f coverage.xml
+
+
