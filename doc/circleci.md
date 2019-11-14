@@ -101,3 +101,6 @@ jobs:
 - Para ejecutar los test hacemos `make -B test` la opción `-B` para forzar que se hagan los test.
 - Para parar el servio `make stop`.
 - Para borrar el servicio del gestor de tareas hacemos uso de `make delete`
+
+## Salida circleci
+![img](images/salida_circleci.png)

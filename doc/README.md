@@ -225,6 +225,10 @@ jobs:
 - Para parar el servio `make stop`.
 - Para borrar el servicio del gestor de tareas hacemos uso de `make delete`
   
+
+## Salida circleci
+![img](images/salida_circleci.png)
+
 ## Integración continua local  
 
 ## [Jenkins](https://jenkins.io/)<img src="images/jenkins.png" alt="alt text" width="40px" height="40px">
