@@ -39,6 +39,6 @@ jobs:
 
       - run:
           name: delete app
-          command: make delete_app
+          command: make delete
  
 
