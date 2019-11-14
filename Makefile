@@ -10,6 +10,7 @@ dependences:
 	@echo "install dependences"
 	pip3 install -r requirements.txt
 
+
 test: 
 	@echo "run tests"
 	cd ./test && pytest --cov=test	test.py test_app.py
