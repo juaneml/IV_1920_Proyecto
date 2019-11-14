@@ -3,7 +3,7 @@ dependences:
 	@echo "language: python version 3.7 \n"
 	
 
-	@cho "npm install and pm2"
+	@echo "npm install and pm2"
 	npm install npm-install-all -g
 	npm install pm2 -g
 
