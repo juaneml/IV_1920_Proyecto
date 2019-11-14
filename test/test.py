@@ -12,7 +12,7 @@ import requests
 sys.path.append('../src/')
 from principal import *
 from usuario import *
-url = 'https://proyecto-iv-19.herokuapp.com/status'
+#url = 'https://proyecto-iv-19.herokuapp.com/status'
 
 class TestMethods(unittest.TestCase):
 
@@ -21,7 +21,7 @@ class TestMethods(unittest.TestCase):
     
     pruebaUsuario = Usuario()
     pruebaUsuario.crea_usu(lista_usuario)
-    print(lista_usuario)
+    #print(lista_usuario)
 
     #for i in usuario:
     # for i in range(usuario.num_usuarios):
@@ -56,10 +56,6 @@ class TestMethods(unittest.TestCase):
     def test_to_s(self):
         self.assertEqual(self.pruebaServicio.to_s(0,self.pruebaUsuario)['Nombre'],'Usuario 1', "Usuario correcto")
     
-    def test_url_raiz(self):
-        response = requests.get(url)
-        self.assertEqual(response.json()['status'],'OK', "Aplicación con status OK")
-        
 
 if __name__ == '__main__':
     unittest.main()
