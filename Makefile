@@ -4,9 +4,9 @@ dependences:
 	echo "install dependences"
 	pip3 install -r requirements.txt
 	pip3 install codecov
-    pip3 install pytest-cov
-    pip3 install python-coveralls
-  - pip3 install coveralls
+    	pip3 install pytest-cov
+    	pip3 install python-coveralls
+   	pip3 install coveralls
 
 script: 
 	echo "run tests"

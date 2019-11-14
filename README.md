@@ -1,7 +1,7 @@
 # IV_1920_Proyecto
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docu: Docu](https://img.shields.io/static/v1?label=Documentación&message=si&color=success)](https://juaneml.github.io/doc_IV-1920_Proyecto/)
-[![Build Status](https://img.shields.io/travis/juaneml/IV_1920_Proyecto?logo=travis)](https://travis-ci.org/juaneml/IV_1920_Proyecto)
+[![Build Status](https://travis-ci.org/juaneml/IV_1920_Proyecto.svg?branch=master)](https://travis-ci.org/juaneml/IV_1920_Proyecto)
 [![codecov](https://codecov.io/gh/juaneml/IV_1920_Proyecto/branch/master/graph/badge.svg)](https://codecov.io/gh/juaneml/IV_1920_Proyecto)
 [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
@@ -25,14 +25,9 @@
 ## Herramienta de construcción
 [Makefile](https://github.com/juaneml/IV_1920_Proyecto/blob/master/Makefile)
 
-## Descarga la aplicación:
-Para ello realiza en un terminal lo siguiente:
 ~~~
-git clone https://github.com/juaneml/IV_1920_Proyecto.git
-~~~
-
 buildtool: Makefile
-
+~~~
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
