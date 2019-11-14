@@ -1,6 +1,12 @@
 
 Hug==2.6.0
 pytest==5.2.1
-psycopg2==2.8.3
 PyYAML==5.1.2
-gunicorn
+psycopg2==2.8.3
+pipenv
+coverage==4.5.4
+pytest-cov==2.7.1
+python-coveralls==2.9.2
+pip==19
+codecov
+gunicorn==19.5.0
