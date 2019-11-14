@@ -2,7 +2,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docu: Docu](https://img.shields.io/static/v1?label=Documentación&message=si&color=success)](https://juaneml.github.io/doc_IV-1920_Proyecto/)
 [![Build Status](https://travis-ci.org/juaneml/IV_1920_Proyecto.svg?branch=master)](https://travis-ci.org/juaneml/IV_1920_Proyecto)
+[![CircleCI](https://circleci.com/gh/juaneml/IV_1920_Proyecto.svg?style=svg)](https://circleci.com/gh/juaneml/IV_1920_Proyecto)
 [![codecov](https://codecov.io/gh/juaneml/IV_1920_Proyecto/branch/master/graph/badge.svg)](https://codecov.io/gh/juaneml/IV_1920_Proyecto)
+[![Coverage Status](https://coveralls.io/repos/github/juaneml/IV_1920_Proyecto/badge.svg?branch=master)](https://coveralls.io/github/juaneml/IV_1920_Proyecto?branch=master)
 [![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 - Repositorio para el proyecto de Infraestructura Virtual.
