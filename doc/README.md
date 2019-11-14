@@ -421,7 +421,7 @@ con las siguientes características:
    ~~~
 
 
-  Puedes visitar el resultado [aquí](https://github.com/juaneml/IV_1920_Proyecto/blob/master/src/README.md)
+  Puedes visitar la documentación de clases [aquí](https://github.com/juaneml/IV_1920_Proyecto/blob/master/src/README.md)
 
 - Puedes consultar la documentación en:
   
