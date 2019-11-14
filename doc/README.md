@@ -23,6 +23,9 @@
 4- [Integración continua jenkis](/doc/jenkins.md).
 
 5- [Herramienta de construcción](/doc/herramienta_construcción.md).
+
+6- [Documentación clases](/doc/doc_clases.md)
+
 ## Herramientas a usar
 
 
@@ -124,9 +127,9 @@
 ## [circleci](https://circleci.com/)<img src="images/circleci.png" alt=" alt text" width="40px" height="40px">
 
 
-- Como sistema de integración continua opcional se ha elegido [circleci](https://circleci.com/)
+- Como sistema de integración continua opcional se ha elegido [circleci](https://circleci.com/).
   
-- Para poder hacer uso del servicio de circleci vamos a la página de [circle]https://circleci.com/)
+- Para poder hacer uso del servicio de circleci vamos a la página de [circleci](https://circleci.com/).
 
 ### 1. Registro
 
@@ -163,13 +166,13 @@
   ~~~
 
 - Mi configuración del archivo config.yml es así:
-~~~
+  ~~~
      
-##
-# Check https://circleci.com/docs/2.0/language-python/ 
-##
-version: 2
-jobs:
+  ##
+  # Check https://circleci.com/docs/2.0/language-python/ 
+  ##
+  version: 2
+  jobs:
   build:
     docker:
       - image: circleci/python:3.7-rc-node
@@ -418,7 +421,6 @@ con las siguientes características:
    ~~~
 
 
- # Comprobamos que todo ha ido bien:
   Puedes visitar el resultado [aquí](https://github.com/juaneml/IV_1920_Proyecto/blob/master/src/README.md)
 
 - Puedes consultar la documentación en:
