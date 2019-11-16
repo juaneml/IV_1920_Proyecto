@@ -1,4 +1,4 @@
-
+python==3.7.5
 Hug==2.6.0
 pytest==5.2.1
 PyYAML==5.1.2
