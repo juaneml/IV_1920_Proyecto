@@ -371,7 +371,7 @@ con las siguientes características:
 
     - Tenemos dos test:
     - [test.py](/test/test.py) hace test al código python necesario para nuestro servicio
-    - [test_app.py](/test/test_app), se aplican test al servicio, haciendo uso de nuestro [Framework Hug](https://www.hug.rest/), como la comprobación de que se muestra el contenido deseado en las distintas urls definidas.
+    - [test_app.py](/test/test_app.py), se aplican test al servicio, haciendo uso de nuestro [Framework Hug](https://www.hug.rest/), como la comprobación de que se muestra el contenido deseado en las distintas urls definidas.
     
 - codecov:
   - Tendremos la cobertura de nuestro código, es decir el uso que se ha obtenido del código que queremos aplicar la cobertura, en nuestro caso los test.
@@ -421,7 +421,7 @@ con las siguientes características:
    ~~~
 
 
-  Puedes visitar el resultado [aquí](https://github.com/juaneml/IV_1920_Proyecto/blob/master/src/README.md)
+  Puedes visitar la documentación de clases [aquí](https://github.com/juaneml/IV_1920_Proyecto/blob/master/src/README.md)
 
 - Puedes consultar la documentación en:
   
