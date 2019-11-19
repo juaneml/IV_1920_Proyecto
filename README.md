@@ -25,7 +25,11 @@
 [Test](https://github.com/juaneml/IV_1920_Proyecto/tree/master/test)
 
 ## Herramienta de construcción
-[Makefile](https://github.com/juaneml/IV_1920_Proyecto/blob/master/Makefile)
+[Makefile](/doc/herramienta_construcción.md)
+
+
+## Rutas
+[Rutas](/doc/doc_clases.md)
 
 ~~~
 buildtool: Makefile
