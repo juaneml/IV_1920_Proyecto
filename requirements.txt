@@ -9,3 +9,5 @@ python-coveralls==2.9.2
 pip==19
 codecov
 gunicorn==19.5.0
+## para zeit
+cowpy==1.0.3
