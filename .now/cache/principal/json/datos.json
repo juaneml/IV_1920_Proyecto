@@ -1,0 +1,15 @@
+[{"name":"Usuario 1",
+    "password": "asdfj2323as",
+    "progres": "1995-11-06T23:20:50",
+   
+    "marca": "MarcaA",
+    "tipo":"Industrial",
+    "n_cigar": 22
+    },{ "name":"Usuario 2",
+    "password": "#@45asfull",
+    "progres": "2019-04-05T10:15:26",
+    "marca": "MarcaE",
+    "tipo": "Liar",
+    "n_cigar": 10
+}
+]

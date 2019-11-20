@@ -1,0 +1,10 @@
+../../bin/cowpy,sha256=3Aux6waIUZGf1mMTr2tpKjh5QJMsGq7q9Q2x_Y15tYI,61
+cowpy-1.0.3.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+cowpy-1.0.3.dist-info/METADATA,sha256=pNGUEo1koJw4196wng5b7PA4XVsHFb77qB__KJWXNi8,248
+cowpy-1.0.3.dist-info/RECORD,,
+cowpy-1.0.3.dist-info/WHEEL,sha256=wYBY2EO50FhAcckpWmO3c3Zwk2MALACx6lPAl6gVKnE,93
+cowpy-1.0.3.dist-info/top_level.txt,sha256=Hd7L5Wra7iRz_y9MGxAKcJ7Kpn9f2l1p1rC1Y31cssI,6
+cowpy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cowpy/__pycache__/__init__.cpython-37.pyc,,
+cowpy/__pycache__/cow.cpython-37.pyc,,
+cowpy/cow.py,sha256=W9eX898X1ocpWGvF1SrBOEEiY7z8tfglxFmtmGrRwxw,41928
