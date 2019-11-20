@@ -1,9 +1,0 @@
-{"scripts":{
-
-  "dep": "make dependences",
-  "start": "make start",
-  "status": "make status",
-  "stop": "make stop",
-  "delte": "make delte"
-}
-}
