@@ -4,6 +4,6 @@
 		{ "src": "proyecto_app.py", "use": "@now/python" }
 	],
 	"routes": [
-		{ "src": "/src/(.*)", "dest": "/src/$1.py" }
+		{ "src": "/(.*)", "dest": "/$1.py" }
 	]
 }
