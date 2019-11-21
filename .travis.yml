@@ -26,8 +26,7 @@ after_success:
   - make delete
 
   - cd ./test 
-  - bash <(curl -s https://codecov.io/bash) -t d0ba6a02-f9f7-44ab-b128-a82396d54280 -f coverage.xml
+  - bash <(curl -s https://codecov.io/bash) -f coverage.xml
   - coveralls
-  #- bash <(curl -s https://codecov.io/bash) -t d0ba6a02-f9f7-44ab-b128-a82396d54280 -f coverage.xml
 
 
