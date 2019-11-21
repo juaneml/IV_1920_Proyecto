@@ -33,5 +33,5 @@ jobs:
         
         sudo make start
         sudo make -B test
-        sudo make stop_app
-        sudo make delete_app
+        sudo make stop
+        sudo make delete
