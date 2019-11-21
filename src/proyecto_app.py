@@ -79,7 +79,3 @@ def method_post():
 @hug.get('/version')
 def post():
     return method_post()
-if __name__ == '__main__':
-
-    una.interface.cli()
-    all.interface.cli()
