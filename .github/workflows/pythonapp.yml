@@ -31,7 +31,7 @@ jobs:
       run: |
        # pip install pytest
         
-        sudo make ini_ap
+        sudo make start
         sudo make -B test
         sudo make stop_app
         sudo make delete_app
