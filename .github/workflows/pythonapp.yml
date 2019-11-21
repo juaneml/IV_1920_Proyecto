@@ -16,7 +16,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        sudo apt-get install python3-setuptools
+        sudo apt-get install libpq-dev
+        # pip install -r requirements.txt
+         sudo make dependences
     - name: Lint with flake8
       run: |
         pip install flake8
@@ -27,4 +30,8 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        pytest
+        
+        sudo make ini_ap
+        sudo make -B test
+        sudo make stop_app
+        sudo make delete_app
