@@ -52,7 +52,7 @@ buildtool: Makefile
 ~~~~
 Despliegue: https://proyecto-iv-19.herokuapp.com/
 
-Despliegue: https://proyecto-iv-19.azurewebsites.net/
+Despliegue 2: https://proyecto-iv-19.azurewebsites.net/
 ~~~~
 
 ## Documentación
