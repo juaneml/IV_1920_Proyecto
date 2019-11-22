@@ -160,7 +160,7 @@ az appservice plan create -g IV_Proyecto_1920 --is-linux --sku F1 -n FREE
 
 Pasamo a la creación de nuestra aplicación, consultamos [az webapp create](https://docs.microsoft.com/es-es/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
 
-Y para la configuración de python consultamos[app_python](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes)
+Y para la configuración de python consultamos [app_python](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes)
 Creamos una aplicación web con Python 3.7 y desplegamos de nuestro repositorio local de git.
 
 Para saber el runtime necesario  para python y nuestra versión consultamos con el comando
