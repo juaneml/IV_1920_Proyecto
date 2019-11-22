@@ -12,6 +12,10 @@
 
 5.[Herramienta de construcción](#herramienta-de-construcci%c3%b3n).
 
+6.[Heroku](#paas-heroku)
+
+7.[Azure](#paas-azure)
+
 **Enlace rápido a las distintas secciones a parte.**
 
 1-  [Herramientas](/doc/herramientas.md).
@@ -26,6 +30,9 @@
 
 6- [Documentación clases](/doc/doc_clases.md)
 
+7- [Documentación Heroku](/doc/heroku.md)
+
+8- [Documentación Azure](/doc/azure.md)
 ## Herramientas a usar
 
 
@@ -422,6 +429,129 @@ con las siguientes características:
 
 
   Puedes visitar la documentación de clases [aquí](https://github.com/juaneml/IV_1920_Proyecto/blob/master/src/README.md)
+
+# PaaS Heroku
+# Despliegue de aplicación en [heroku](https://www.heroku.com/)<img src="images/heroku_logo.jpg" alt="alt text" width="40px" height="40px">
+
+A continuación veremos los pasos para desplegar nuestra aplicación.
+
+## Paso 1:
+- Nos registramos en [Heroku](https://www.heroku.com/)
+- Elegimos el nombre de nuestra aplicación, en mi caso proyecto-iv
+![create](images/create_new_app.png)
+
+## Paso 2:
+- Conectamos nuestra aplicación con nuestro repositorio eh Github
+![connect](images/conect_github.png)
+
+## Paso 3:
+- Activamos la opción Wait for CI to pass before deploy, ya que tenemos a Travis para
+la ejecución de los tests.
+![automatic_desploy](images/automatic_deploys.png)
+
+# Adaptamos el proyecto para la ejecución de heroku
+
+- Añadimos los requerimientos en el archivo [requirements.txt](.//../requirements.txt) necesarios en mi caso son los siguientes :
+   ~~~~
+    Hug==2.6.0
+    pytest==5.2.1
+    pip==19.2
+    PyYAML==5.1.2
+    psycopg2==2.8.3
+    pipenv
+    coverage==4.5.4
+    pytest-cov==2.7.1
+    python-coveralls==2.9.2
+    codecov
+    gunicorn==19.5.0
+   ~~~~
+# Añadimos un nuevo archivo con nombre [Procfile](./../Procfile) con el contenido siguiente:
+  ~~~
+   web: cd src && gunicorn proyecto-dep-app:__hug_wsgi__ --log-file -
+  ~~~
+
+ - Este archivo es necesario para indicarle a Heroku como ejecutar nuestra aplicación, indica que se mueva al directorio donde está la aplicación, directorio src,se indica que el proceso es un proceso web que va a recibir tráfico HTTP y que se ejecute la el fichero Python con nombre proyecto-dep_app,con el servidor web gunicorn ejecute la aplicación de Python que usa como framework hug  con los parámetros __hug_wsgi__ como nos indica la documentación [hug](https://www.hug.rest/website/quickstart) y así integre nuestra aplicación de microservicio.
+
+# Añadimos otro archivo con nombre [runtime.txt](./../runtime.txt) con el contenido siguiente:
+~~~~
+python-3.7.5 
+~~~~
+- Que en mi caso especifico la versión de python que uso.
+  
+ - Así ya tendremos a nuestra aplicación en la plataforma de Heroku.
+
+
+# PaaS Azure
+# Despliegue de aplicación en [azure](https://azure.microsoft.com/es-es/free/search/?&ef_id=Cj0KCQiAiNnuBRD3ARIsAM8KmltdzErNaoJ-qfkq0dVgt7CPXJUWdD_4Ho5HnxzMa3sFBC_hGmw_OLMaAjxSEALw_wcB:G:s&OCID=AID2000115_SEM_VAab2G2A&MarinID=VAab2G2A_325806734845_azure_e_c__68954907492_aud-394034018130:kwd-49508422&lnkd=Google_Azure_Brand&dclid=COiOhNH5--UCFUbIUQodAS4MqQ)<img src="images/logo_azure.png" alt="alt text" width="40px" height="40px">
+
+- A continuación veremos los pasos para desplegar nuestra aplicación.
+
+- Lo primero que tenemos que hacer es registrarnos en la plataforma de [azure](https://azure.microsoft.com/es-es/free/search/?&ef_id=Cj0KCQiAiNnuBRD3ARIsAM8KmltdzErNaoJ-qfkq0dVgt7CPXJUWdD_4Ho5HnxzMa3sFBC_hGmw_OLMaAjxSEALw_wcB:G:s&OCID=AID2000115_SEM_VAab2G2A&MarinID=VAab2G2A_325806734845_azure_e_c__68954907492_aud-394034018130:kwd-49508422&lnkd=Google_Azure_Brand&dclid=COiOhNH5--UCFUbIUQodAS4MqQ).
+
+- Una vez que hemos iniciado sesión vamos a crear nuestra aplicación.
+
+## Creación de la aplicación
+
+- Vamos a `+` Crear un recurso, elegimos aplicación web, obtendremos una salida como esta:
+  
+![img](images/0-azure_create_.png)
+
+### Supcrición
+
+- Elegimos nuestra subscripción, en mi caso Student Starter, también está creada en la subcripción de la asignatura pero no puedo mostrarla ya que el crédito lo agoté.
+
+- Elegimos un nombre para nuestro grupo de recursos en mi caso `IV_Proyecto_1920`
+
+### Detalles de instancia
+
+- **Nombre**: el nombre de nuestra aplicación, en mi caso proyecto-iv-19
+- **Publicar**:Elegimos código.
+- **Sistema operativo**: sistema Linux.
+- **Región**: la que viene por defecto Central US.
+- **Plan de App Service**: El que nos viene con la subscripción.
+
+## Revisar y crear
+
+- Revisamos que la configuración es la deseada y pasamos a crearla.
+- Obtendremos una salida como esta:
+
+![img](images/azure_revisar_crear.png)
+
+- Una vez finalizada la creación tendremos una salida como esta:
+
+![img](images/azure_ir_a_recurso.png)
+
+## Implementación de la aplicación
+
+- Vamos a Centro de implementación, tendremos una salida como esta:
+
+![img](images/azure_centro_implementación.png)
+
+- En ella añadimos la implementación continua, en mi caso del repositorio de GitHub para la asignatura, le damos a continuar y elegimos el repositorio, una vez configurado ya tendremos configurada la aplicación con el código de nuestro repositorio de Github, tendremos una salida como esta:
+
+![img](images/azure_centro_ip_finalizar.png)
+
+- En configurar nuestros dados:
+![img](images/centro_imp_configurar.png)
+- Para acabar le damos a finalizar y azure comenzará a recopilar la información de nuestro repositorio y a configurar lo necesario para que esté lista nuestra aplicación.
+
+
+## Configurar
+
+- Para que nuestra aplicación funcione correctamente,necesitamos configurarla para ello vamos a la sección de Configuración/Configuración general y añadimos el comando de inicio que queremos que se ejecute para desplegar nuestra aplicación en mi caso es con gunicorn:
+
+~~~~
+cd ./src && gunicorn proyecto_app:__hug_wsgi__ 
+~~~~
+
+- Una vez que hemos introducido el comando de inicio, Guardamos la configuración.
+
+## Para finalizar
+
+- Vamos a la sección de introducción iniciamos la apliación si no está iniciada y para ver nuestra aplicación desplegado accedemos a URL y obtendremos una salida como esta:
+
+![img](images/aure_url_ok.png)
+
 
 - Puedes consultar la documentación en:
   
