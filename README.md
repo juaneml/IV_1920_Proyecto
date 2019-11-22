@@ -34,6 +34,27 @@
 ~~~
 buildtool: Makefile
 ~~~
+
+## PaaS [Heroku](https://www.heroku.com)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://proyecto-iv-19.herokuapp.com/)
+
+- Despliegue enla plataforma Heroku
+
+- [Documentación Heroku](doc/heroku.md)
+
+## Paas [Azure](https://azure.microsoft.com)
+- Desplieque en la plataforma Azure.
+  
+- [Documentación Azure](doc/azure.md)
+
+## Despliegue
+
+~~~~
+Despliegue: https://proyecto-iv-19.herokuapp.com/
+
+Despliegue: https://proyecto-iv-19.azurewebsites.net/
+~~~~
+
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
