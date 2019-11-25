@@ -10,6 +10,8 @@ dependences:
 	@echo "install dependences"
 	pip3 install -r requirements.txt
 
+docker:
+	pip3 install --no-cache-dir -r requirements.txt
 
 test: 
 	@echo "run tests"

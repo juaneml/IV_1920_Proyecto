@@ -6,7 +6,7 @@ WORKDIR src/
 COPY requirements.txt ./
 COPY . .
 
-RUN make dependences
+RUN make docker
 
 
 
