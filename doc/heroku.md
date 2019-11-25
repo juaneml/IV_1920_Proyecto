@@ -45,5 +45,7 @@ la ejecución de los tests.
 python-3.7.5 
 ~~~~
 - Que en mi caso especifico la versión de python que uso.
-  
- - Así ya tendremos a nuestra aplicación en la plataforma de Heroku.
+
+- Por defecto Heroku tiene Python 3.6.6 y como usamos python 3.7.5, consultando la [documentación](https://devcenter.heroku.com/changelog-items/1442), nos indica que podemos especificar la versión de python con un nuevo archivo con nombre runtime.txt por esta razón se ha añadido el archivo.
+    
+- Así ya tendremos a nuestra aplicación en la plataforma de Heroku.
