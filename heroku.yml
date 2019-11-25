@@ -1,7 +1,6 @@
 
 build:
   docker:
-    web: DockerFile
-
+  web: DockerFile
 run:
-  web: cd src && gunicorn proyecto_app:__hug_wsgi__ --log-file -
+ web: cd src && gunicorn proyecto_app:__hug_wsgi__ --log-file -
