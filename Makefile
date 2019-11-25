@@ -33,6 +33,9 @@ start:
 	@echo "Iniciamos la appp puerto 80000"
 	cd ./src; pm2 start 'gunicorn proyecto_app:__hug_wsgi__ -b 0.0.0.0:8000' --name proyecto
 
+start_heroku:
+	cd src && gunicorn proyecto_app:__hug_wsgi__ --log-file -
+	
 status:
 	@echo "status proyecto"
 	pm2 status proyecto
