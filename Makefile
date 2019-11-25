@@ -35,7 +35,9 @@ start:
 
 start_heroku:
 	cd src && gunicorn proyecto_app:__hug_wsgi__ --log-file -
-	
+
+start_docker:
+	cd src && gunicorn proyecto-dep-app:__hug_wsgi__
 status:
 	@echo "status proyecto"
 	pm2 status proyecto
