@@ -6,7 +6,7 @@ WORKDIR /proyecto_iv-19
 COPY . .
 COPY requirements.txt /proyecto_iv-19
 
-RUN make docker
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 
 EXPOSE 8000
