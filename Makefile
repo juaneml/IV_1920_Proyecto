@@ -36,7 +36,7 @@ start:
 	cd ./src; pm2 start 'gunicorn proyecto_app:__hug_wsgi__ -b 0.0.0.0:8000' --name proyecto
 
 start_heroku:
-	cd src && gunicorn proyecto_app:__hug_wsgi__ --log-file -
+	cd src && gunicorn proyecto_app:__hug_wsgi__ --log-file -b 0.0.0.0:80
 
 start_docker:
 	cd src && gunicorn proyecto_app:__hug_wsgi__ 

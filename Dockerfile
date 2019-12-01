@@ -1,19 +1,17 @@
-FROM python:3
-#ENV PYTHON_VERSION 3.7.5
+FROM python:3.7-slim-stretch
+
 LABEL maintainer="juaneml@correo.ugr.es"
-WORKDIR src/
 
-COPY requirements.txt ./
-COPY . .
+WORKDIR /proyecto_iv-19
 
-RUN apt-get update
-RUN apt-get -y install curl gnupg
-RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
-RUN apt-get -y install nodejs
+COPY .. /proyecto_iv-19
 
-RUN make dependences
-RUN make start
+COPY requirements.txt /proyecto_iv-19
 
 
-EXPOSE 80
-CMD make start_docker
+ENV PYTHON_VERSION 3.7.5
+
+RUN make docker
+
+EXPOSE 8000
+CMD cd /src gunicorn proyecto_app:__hug_wsgi__ -
