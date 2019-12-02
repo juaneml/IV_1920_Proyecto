@@ -6,8 +6,8 @@ WORKDIR /proyecto_iv-19
 COPY . .
 COPY requirements.txt /proyecto_iv-19
 
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN pip install psycopg2-binary
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
