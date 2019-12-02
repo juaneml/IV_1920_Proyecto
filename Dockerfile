@@ -1,13 +1,17 @@
-FROM python:3.7.5-slim-stretch
+FROM python:3-alpine
 
 LABEL maintainer="juaneml@correo.ugr.es"
 
 WORKDIR /proyecto_iv-19
 COPY . /proyecto_iv-19
 
-RUN export PATH=/usr/lib/postgresql/X.Y/bin/:$PATH
+RUN apk update \
+  && apk add --virtual build-deps gcc python3-dev musl-dev \
+  && apk add postgresql-dev \
+  && pip install psycopg2 \
+  && apk del build-deps
+  
 RUN pip3 install --no-cache-dir -r requirements.txt
-RUN pip install psycopg2-binary
 
 
 EXPOSE 8000
