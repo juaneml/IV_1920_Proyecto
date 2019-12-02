@@ -16,4 +16,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 EXPOSE 8000
 
-CMD cd && src gunicorn proyecto_app:__hug_wsgi__ -
+CMD cd src && gunicorn proyecto_app:__hug_wsgi__ -
