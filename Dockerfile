@@ -6,7 +6,7 @@ WORKDIR /proyecto_iv-19
 COPY . .
 COPY requirements.txt /proyecto_iv-19
 
-RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apt update && apt add postgresql-dev gcc python3-dev musl-dev
 RUN pip install psycopg2-binary
 
 RUN pip3 install --no-cache-dir -r requirements.txt
