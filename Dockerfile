@@ -13,5 +13,5 @@ RUN apk update \
   
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-CMD cd src && ["gunicorn","-b","0.0.0.0:8000","proyecto_app"]
+CMD cd src && gunicorn proyecto_app:__hug_wsgi__
 EXPOSE 8000/tcp
