@@ -55,6 +55,17 @@ Despliegue: https://proyecto-iv-19.herokuapp.com/
 Despliegue 2: https://proyecto-iv-19.azurewebsites.net/
 ~~~~
 
+## Despliegue con Docker
+
+Contenedor: https://proyecto-iv-19-docker.herokuapp.com/
+
+Contenedor: https://docker-proyecto-iv-19.azurewebsites.net/
+
+
+## [Docker Hub](https://hub.docker.com)
+Dockerhub: https://hub.docker.com/r/juaneml/proyecto-iv-19
+
+
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
