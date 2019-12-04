@@ -3,4 +3,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: cd src && gunicorn proyecto_app:__hug_wsgi__ --log-file -
+  web: start_heroku
