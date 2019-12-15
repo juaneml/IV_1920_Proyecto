@@ -11,32 +11,34 @@
     ~~~
     language: python
 
-        python:
+      python:
         - "3.7"
 
-        # command to install dependencies
-        install:
-        - pip3 install -r requirements.txt
-        - pip3 install codecov
-        - pip3 install pytest-cov
-        - pip3 install python-coveralls
-        - pip3 install coveralls
-        services:
+      # command to install dependencies
+      install:
+        - make dependences
+
+      services:
         - postgresql
-            
-        before_script:
+          
+      before_script:
         - psql -c 'create database travis_ci_test;' -U postgres
         
-        
-        # command to run tests
-        script: 
-        - cd ./test && pytest -v test.py 
-        - coverage run test.py
-        - coverage report -m
-        - coverage xml
+      
+      # command to run tests
+      script: 
+        - make start
+        - make status
+        - make -B test
+      
 
-        after_success:
-        - bash <(curl -s https://codecov.io/bash) -t d0ba6a02-f9f7-44ab-b128-a82396d54280 -f coverage.xml
+      after_success:
+        - make stop
+        - make delete
+
+        - cd ./test 
+        - bash <(curl -s https://codecov.io/bash) -f coverage.xml
+        - coveralls
 
     ~~~     
      
