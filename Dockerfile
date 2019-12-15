@@ -3,7 +3,8 @@ FROM python:3.7-alpine
 LABEL maintainer="juaneml@correo.ugr.es"
 
 WORKDIR /proyecto_iv-19
-COPY . /proyecto_iv-19
+COPY requirements.txt /proyecto_iv-19
+COPY /src /proyecto_iv-19
 
 RUN apk update \
   && apk add --virtual build-deps gcc python3-dev musl-dev \
