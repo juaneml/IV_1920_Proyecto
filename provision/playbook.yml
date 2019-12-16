@@ -14,7 +14,7 @@
         - name: Clonar nuestro repositorio en github
           git:
             repo: https://github.com/juaneml/IV_1920_Proyecto.git
-            dest: proyecto_iv-19/
+            dest: proyectoiv19/
           become: no
     
   
@@ -48,7 +48,7 @@
       # Instalamos Requirements necesarios para nuestro microservicio
     
         - name: Install requirements.txt
-          command: pip3 install -r ./IV_1920_Proyecto/requirements.txt
+          command: pip3 install -r ./proyectoiv19/requirements.txt
     
           become: yes
 
