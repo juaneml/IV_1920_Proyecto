@@ -48,7 +48,7 @@
       # Instalamos Requirements necesarios para nuestro microservicio
     
         - name: Install requirements.txt
-          command: pip3 install -r ./proyectoiv19/requirements.txt
+          command: pip3 install -r proyectoiv19/requirements.txt
     
-          become: yes
+          become: no
 
