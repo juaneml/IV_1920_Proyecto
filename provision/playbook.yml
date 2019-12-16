@@ -17,15 +17,7 @@
             dest: proyecto_iv-19/
           become: no
     
-    
-        # Instalación de  Python 3
-    
-        # Repositorios necesarios para python3
-    
-        - name: repositorios necesario deadsnakes PPA python3
-          apt_repository: repo=ppa:deadsnakes/ppa state=present
-    
-          become: yes
+  
     
         #Actualizamos repositorios
     
