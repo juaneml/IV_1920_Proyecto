@@ -68,7 +68,10 @@ Contenedor: https://docker-proyecto-iv-19.azurewebsites.net/
 Dockerhub: https://hub.docker.com/r/juaneml/proyecto-iv-19
 
 
+## Provisionamiento
+provision: provision/playbook.yml
 
+- [Documentación provisionamiento](doc/doc_provision.md)
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
