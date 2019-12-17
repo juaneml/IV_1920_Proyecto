@@ -3,11 +3,9 @@
       become: yes
       tasks:
     
-    
         # Instalacion de git
         - name: Instala git
-          apt: pkg=git state=present
-    
+          apt: pkg=git force_apt_get=yes  state=present 
     
         # Clonamos Repositorio
     
@@ -17,14 +15,12 @@
             dest: proyectoiv19/
           become: no
     
-  
-    
         #Actualizamos repositorios
     
         - name: update repositorio
           apt:
-            update_cache: yes
-          become: yes
+            update_cache: yes 
+          become: yes 
     
         #upgrade repositorios
         - name: upgrade all packets to the last version
@@ -37,18 +33,26 @@
           apt: pkg=python3.7 state=present
           become: yes
     
-    
       # Instalamos pip3
     
         - name: Instalación pip3
           apt: pkg=python3-pip state=latest
     
           become: yes
-    
+
+      # instalamos requisitos necesarios para psycopg2
+
+        - name: install prerequisites
+          apt: 
+          
+            pkg: ['libpq-dev', 'python3-psycopg2']
+          
+          become: yes
+
       # Instalamos Requirements necesarios para nuestro microservicio
     
         - name: Install requirements.txt
-          command: pip3 install -r proyectoiv19/requirements.txt
-    
-          become: no
+          command: pip3 install -r proyectoiv19/requirements.txt 
+          
+          become: yes
 
