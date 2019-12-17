@@ -61,4 +61,8 @@ delete:
 	@echo "delete proyecto in pm2"
 	pm2 delete proyecto
 
-  	
+vagrant_up:
+	vagrant up 
+
+vagrant_provision:
+	vagrant provision
