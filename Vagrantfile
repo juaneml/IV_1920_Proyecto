@@ -10,8 +10,8 @@ Vagrant.configure('2') do |config|
   
   # Configuración  para provisionar con ansible
     config.vm.provision "ansible" do |ansible|
-        #ansible.compatibility_mode = "2.0"
-        #ansible.version = "2.7.5"
+        ansible.compatibility_mode = "2.0"
+        ansible.version = "2.8.3"
         ansible.playbook = "provision/playbook.yml"
     end
   end
