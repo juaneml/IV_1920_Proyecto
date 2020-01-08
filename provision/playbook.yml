@@ -30,7 +30,7 @@
         #Instalamos python3
     
         - name: Instalación python3
-          apt: pkg=python3.7 state=present
+          apt: pkg=python3-pip state=latest
           become: yes
     
       # Instalamos pip3
@@ -55,4 +55,3 @@
           command: pip3 install -r proyectoiv19/requirements.txt 
           
           become: yes
-
