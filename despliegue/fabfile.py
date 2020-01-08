@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from fabric.api import *
 
+
 # Muestra el estado del DNS de nuestra app
 
 def StatusDns():
@@ -56,10 +57,15 @@ def MicroservicioClean():
     ## Instalamos requirements.txt
     InstallReq()
 
+def Makedepen():
+    #Lanzamos makefile
+    run(' sudo apt-get install npm && sudo make dependences')
+
 # Funcion para iniciar el microservicio
 def LanzarApp():
-    run('cd ./proyectoiv19/src/ && sudo gunicorn proyecto-dep-app:__hug_wsgi__ -b 0.0.0.0:80 --name proyecto')
+    run('cd ./proyectoiv19/src/ && sudo gunicorn proyecto_app:__hug_wsgi__ -b 0.0.0.0:80 --name proyecto')
 
 # Funcion para parar el microservicio
 def StopApp():
-    run('pm2 stop proyecto')
+    run('sudo pkill -f gunicorn')
+    
