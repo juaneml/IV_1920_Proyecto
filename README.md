@@ -77,7 +77,7 @@ provision: provision/playbook.yml
 
 Se ha desplegado la aplicación en Azure con el dominio sinhumo1920.
 
-Despliegue final: http://sinhumo1920.westeurope.cloudapp.azure.com/
+Despliegue final: 23.100.0.115
 
 ## Despliegue Final en Google Cloud
 
@@ -85,7 +85,7 @@ Se ha desplegado la aplicación en Google Cloud.
 
 Despliegue final: 35.239.56.14
 
-- [Documantación despliegue](doc/despliegue_cloud.md)
+- [Documentación despliegue final](doc/despliegue_cloud.md)
 
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
