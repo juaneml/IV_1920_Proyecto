@@ -72,6 +72,21 @@ Dockerhub: https://hub.docker.com/r/juaneml/proyecto-iv-19
 provision: provision/playbook.yml
 
 - [Documentación provisionamiento](doc/doc_provision.md)
+
+## Despliegue Final en Azure
+
+Se ha desplegado la aplicación en Azure con el dominio sinhumo1920.
+
+Despliegue final: http://sinhumo1920.westeurope.cloudapp.azure.com/
+
+## Despliegue Final en Google Cloud
+
+Se ha desplegado la aplicación en Google Cloud.
+
+Despliegue final: 35.239.56.14
+
+- [Documantación despliegue](doc/despliegue_cloud.md)
+
 ## Documentación
 - Para más información consulta: [Documentación](https://github.com/juaneml/IV_1920_Proyecto/tree/master/doc).
 
