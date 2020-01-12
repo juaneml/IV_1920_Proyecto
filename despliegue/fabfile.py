@@ -3,10 +3,15 @@
 from fabric.api import *
 
 
-# Muestra el estado del DNS de nuestra app
+# Muestra el estado del DNS de nuestra app en azure
 
-def StatusDns():
+def StatusDns_azure():
     run('curl http://sinhumo1920.westeurope.cloudapp.azure.com/status')
+
+# Muesta el estado de nuesta app en google cloud
+
+def StatusGoogle_cloud(ip):
+    run('curl http://'+ip+'/status')
 
 # Funcion para mantener la version anterior del microservicio
 
@@ -63,7 +68,7 @@ def Makedepen():
 
 # Funcion para iniciar el microservicio
 def LanzarApp():
-    run('cd ./proyectoiv19/src/ && sudo gunicorn proyecto_app:__hug_wsgi__ -b 0.0.0.0:80 --name proyecto')
+    run('cd ./proyectoiv19/src/ &&  sudo gunicorn proyecto_app:__hug_wsgi__ -b 0.0.0.0:80 --name proyecto')
 
 # Funcion para parar el microservicio
 def StopApp():
