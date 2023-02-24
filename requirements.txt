@@ -1,6 +1,6 @@
 Hug==2.6.0
 pytest==5.2.1
-pip==19.2
+pip>=21.1
 pyyaml>=5.4
 psycopg2
 pipenv
