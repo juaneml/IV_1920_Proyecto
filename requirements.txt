@@ -1,7 +1,7 @@
 Hug==2.6.0
 pytest==5.2.1
 pip==19.2
-PyYAML==5.1.2
+PyYAML==5.4
 psycopg2
 pipenv
 coverage==4.5.4
